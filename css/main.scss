@@ -36,3 +36,22 @@ $on-laptop:        800px;
 // }
 
 // Import partials from the `minima` theme.
+
+*{
+    box-sizing: border-box;
+}
+
+html,body{
+    margin: 0;
+}
+
+body{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home {
+    background: #fafafa;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    padding: 50px;
+}
