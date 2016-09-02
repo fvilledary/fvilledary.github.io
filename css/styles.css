@@ -480,7 +480,7 @@ a{
   transform: translate3d(0, 0, 0);
 }
 #equipo .list-item:hover{
-  animation: girito 4s ease-in-out both infinite;
+  animation: girito 1s ease-in-out both infinite;
   transform: translate3d(0, 0, 0);
 }
 
