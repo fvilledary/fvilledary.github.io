@@ -33,15 +33,42 @@ section {
     display: block;
     position: relative;
 }
-section > .bk::before{
+section > .bk.pdrfy::before{
   content: '';
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(22,156,191,.3);
+  background-color: rgba(22,156,191,.3);
 }
+
+.image{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  vertical-align: middle;
+}
+
+section .bk{
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+}
+section .bk.image{
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+section .bk.image.repeat{
+  background-repeat: repeat;
+  background-size: initial;
+}
+
 .bk > video{
   position: absolute;
   top: 50%;
@@ -205,27 +232,28 @@ a{
   color: #fff;
 }
 .h1{
-    font-size: 60px;
+    font-size: 70px;
+    line-height: 1.2em;
 }
 .h2{
-    font-size: 40px;
+    font-size: 50px;
     line-height: 1.2em;
 }
 .h3{
-    font-size: 27px;
+    font-size: 24px;
 }
 .h4{
-    font-size: 20px;
+    font-size: 18px;
 }
 .h5{
-    font-size: 15px;
+    font-size: 14px;
 }
 .hand{
   font-family: 'Bad Script', sans-serif;
 }
 .title{
   font-size: 80px;
-  line-height: 100px;
+  line-height: 1.2em;
 }
 .bolder{
   font-weight: 900;
@@ -297,6 +325,10 @@ a{
     width:75%;
 }
 
+.op-1{
+  opacity: .1;
+}
+
 .pad10{
     padding: 10px;
 }
@@ -329,8 +361,7 @@ a{
     border-style: solid;
     border-width: 0;
     border-bottom-width: 2px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: .4em 1em .4em 1em !important;
     cursor: pointer;
 }
 
@@ -352,12 +383,12 @@ a{
 }
 
 .button.circle.next {
-    background-image: url(../img/right-arrow.png);
+    background-image: url(../IMG/right-arrow.png);
     background-position-x: 20px;
 }
 
 .button.circle.prev {
-    background-image: url(../img/left-arrow.png);
+    background-image: url(../IMG/left-arrow.png);
     background-position-x: 15px;
 }
 .button:hover{
@@ -381,7 +412,7 @@ a{
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url(../img/default.png);
+  background-image: url(../IMG/default.png);
   vertical-align: middle;
   margin: auto;
   transition: all 300ms;
@@ -389,7 +420,7 @@ a{
 .icono.logo{
   width: 250px;
   height: 83px;
-  background-image: url(../img/logo-white.png);
+  background-image: url(../IMG/logo-white.png);
 }
 .icono.icono-20{
   width: 20px;
@@ -404,23 +435,16 @@ a{
   height: 150px;
 }
 .icono.sustentable{
-  background-image: url(../img/sustentableIcon.png);
+  background-image: url(../IMG/sustentableIcon.png);
 }
 .icono.abierta{
-  background-image: url(../img/abiertaIcon.png);
+  background-image: url(../IMG/abiertaIcon.png);
 }
-.icono.derecho{
-  background-image: url(../img/derechoIcon.png);
+.icono.comoderecho{
+  background-image: url(../IMG/participativaIcon.png);
 }
 .icono.corazon{
-  background-image: url(../img/heartIcon.png);
-}
-
-.image{
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  vertical-align: middle;
+  background-image: url(../IMG/heartIcon.png);
 }
 
 #visionciudad .list-item{
@@ -429,27 +453,25 @@ a{
   background-color: rgba(255,255,255,.1);
   border-radius: 3px;
 }
-#visionciudad .columna {
-  padding-top: 60px;
-  padding-bottom: 60px;
+#visionciudad .columna>div {
   position: relative;
   z-index: 10;
 }
 
-#visionciudad .columna .triangle {
+#visionciudad .columna>div .triangle {
   position: absolute;
   left: 0;
   top: 100%;
   width: 100%;
   height: 40px;
 }
-#visionciudad .columna .triangle.sustentable {
+#visionciudad .columna>div .triangle.sustentable {
   fill: #56AB56;
 }
-#visionciudad .columna .triangle.abierta {
+#visionciudad .columna>div .triangle.abierta {
   fill: #CE794E;
 }
-#visionciudad .columna .triangle.comoderecho {
+#visionciudad .columna>div .triangle.comoderecho {
   fill: #CF507A;
 }
 
@@ -457,27 +479,12 @@ a{
   padding-top: 100px;
 }
 
-#equipo::after {
-  content: "";
-  background-color: #eee;
-  background-image: url(../img/pattern-equipo.png);
-  background-position: center center;
-  background-repeat: repeat;
-  opacity: 0.1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
-
 #equipo .list-item{
   cursor: pointer;
   border-radius: 4px;
   border-bottom: 10px solid rgba(0,0,0,.3);
   padding: 40px;
-  transform: translate3d(0, 0, 0);
+  min-height: 190px;
 }
 #equipo .list-item:hover{
   animation: girito 1s ease-in-out both infinite;
@@ -564,7 +571,7 @@ a{
   top: 8px;
   width: 15px;
   height: 15px;
-  background-image: url(../img/linkIcon.png);
+  background-image: url(../IMG/linkIcon.png);
   background-size: contain;
 }
 

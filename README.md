@@ -1,3 +1,3 @@
-# Stylish Portolio template for Jekyll
+# Web del Partido de la Red
 
-A Jekyll implementation of the [Stylish Portfolio](http://startbootstrap.com/template-overviews/stylish-portfolio/) template by [Start Bootstrap](http://startbootstrap.com/).
+Web del Partido de la Red
